@@ -7,18 +7,18 @@ Stack<int> clothes = new(
         .Split(" ", StringSplitOptions.RemoveEmptyEntries)
         .Select(int.Parse));
 
-int capacity = int.Parse(Console.ReadLine());
+int rack = int.Parse(Console.ReadLine());
 
-int currentCapacity = capacity;
+int currentRack = rack;
 int numberOfRacks = 1;
 
 while (clothes.Any())
 {
-    currentCapacity -= clothes.Peek();
+    currentRack -= clothes.Peek();
 
-    if (currentCapacity < 0)
+    if (currentRack < 0)
     {
-        currentCapacity = capacity;
+        currentRack = rack;
         numberOfRacks++;
 
         continue;

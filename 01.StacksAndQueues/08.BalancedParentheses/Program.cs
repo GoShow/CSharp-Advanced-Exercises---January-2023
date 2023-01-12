@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 string parentheses = Console.ReadLine();
 
@@ -16,21 +15,21 @@ foreach (var parenthese in parentheses)
             stack.Push(parenthese);
             break;
         case '}':
-            if (!stack.Any() || stack.Pop() != '{')
+            if (stack.Count == 0 || stack.Pop() != '{')
             {
                 Console.WriteLine("NO");
                 return;
             }
             break;
         case ')':
-            if (!stack.Any() || stack.Pop() != '(')
+            if (stack.Count == 0 || stack.Pop() != '(')
             {
                 Console.WriteLine("NO");
                 return;
             }
             break;
         case ']':
-            if (!stack.Any() || stack.Pop() != '[')
+            if (stack.Count == 0 || stack.Pop() != '[')
             {
                 Console.WriteLine("NO");
                 return;
@@ -39,4 +38,11 @@ foreach (var parenthese in parentheses)
     }
 }
 
-Console.WriteLine("YES");
+if (stack.Count > 0) // Missed case in judge ((((()))
+{
+    Console.WriteLine("NO");
+}
+else
+{
+    Console.WriteLine("YES");
+}

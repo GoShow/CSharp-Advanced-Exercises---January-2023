@@ -2,21 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 
-string[] tokens = Console.ReadLine()
-    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+int[] tokens = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .ToArray();
 
 int[] numbers = Console.ReadLine()
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     .Select(int.Parse)
     .ToArray();
 
-int elementsToDequeue = int.Parse(tokens[1]);
-
-int number = int.Parse(tokens[2]);
+int elementsToDeque = tokens[1];
+int number = tokens[2];
 
 Queue<int> queue = new(numbers);
 
-for (int i = 0; i < elementsToDequeue; i++)
+for (int i = 0; i < elementsToDeque; i++)
 {
     queue.Dequeue();
 }

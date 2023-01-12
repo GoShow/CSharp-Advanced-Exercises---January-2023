@@ -2,17 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 
-string[] tokens = Console.ReadLine()
-    .Split(" ", StringSplitOptions.RemoveEmptyEntries);
+int[] tokens = Console.ReadLine()
+    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+    .Select(int.Parse)
+    .ToArray();
 
 int[] numbers = Console.ReadLine()
     .Split(" ", StringSplitOptions.RemoveEmptyEntries)
     .Select(int.Parse)
     .ToArray();
 
-int elementsToPush = int.Parse(tokens[0]);
-int elementsToPop = int.Parse(tokens[1]);
-int number = int.Parse(tokens[2]);
+int elementsToPush = tokens[0];
+int elementsToPop = tokens[1];
+int number = tokens[2];
 
 Stack<int> stack = new();
 

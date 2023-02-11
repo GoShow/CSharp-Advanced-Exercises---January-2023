@@ -23,8 +23,5 @@ for (int i = 0; i < count; i++)
     sortedSet.Add(person);
 }
 
-
-Console.WriteLine(hashSet.Contains(new Person { Age = 20, Name = "Ivan" }));
-
 Console.WriteLine(hashSet.Count);
 Console.WriteLine(sortedSet.Count);
